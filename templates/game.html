@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Boggle{% endblock %}
+
+{% block content %}
+
+<h1>BOGGLE</h1>
+<h2></h2>
+<h3>Score = 0</h3>
+<table>
+{% for i in range(5)%}
+<tr>
+{% for letter in board[i] %}
+<td>{{letter}}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<form onsubmit="guess" id = 'guess_form'>
+    <input type="text" placeholder="guess" name="guess" id="guess">
+    <input type="submit" id="submit">
+</form>
+{% endblock %}
